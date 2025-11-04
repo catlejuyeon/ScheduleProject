@@ -1,4 +1,4 @@
-package com.example.scheduleproject.dto;
+package com.example.scheduleproject.schedule.dto;
 
 import jakarta.persistence.GeneratedValue;
 import lombok.Getter;

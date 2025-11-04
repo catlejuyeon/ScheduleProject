@@ -1,7 +1,7 @@
-package com.example.scheduleproject.controller;
+package com.example.scheduleproject.schedule.controller;
 
-import com.example.scheduleproject.dto.*;
-import com.example.scheduleproject.service.ScheduleService;
+import com.example.scheduleproject.schedule.service.ScheduleService;
+import com.example.scheduleproject.schedule.dto.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

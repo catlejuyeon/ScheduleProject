@@ -1,13 +1,12 @@
-package com.example.scheduleproject.service;
+package com.example.scheduleproject.schedule.service;
 
-import com.example.scheduleproject.dto.*;
-import com.example.scheduleproject.entity.Schedule;
-import com.example.scheduleproject.repository.ScheduleRepository;
+import com.example.scheduleproject.schedule.dto.*;
+import com.example.scheduleproject.schedule.entity.Schedule;
+import com.example.scheduleproject.schedule.repository.ScheduleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service

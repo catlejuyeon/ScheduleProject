@@ -1,5 +1,6 @@
-package com.example.scheduleproject.entity;
+package com.example.scheduleproject.schedule.entity;
 
+import com.example.scheduleproject.common.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
