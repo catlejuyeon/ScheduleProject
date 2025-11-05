@@ -1,6 +1,9 @@
 package com.example.scheduleproject.schedule.controller;
 
+import com.example.scheduleproject.schedule.dto.res.CreateScheduleResponse;
 import com.example.scheduleproject.schedule.dto.res.GetScheduleDetailResponse;
+import com.example.scheduleproject.schedule.dto.res.GetScheduleResponse;
+import com.example.scheduleproject.schedule.dto.res.UpdateScheduleResponse;
 import com.example.scheduleproject.schedule.service.ScheduleService;
 import com.example.scheduleproject.schedule.dto.*;
 import lombok.RequiredArgsConstructor;
@@ -21,8 +24,7 @@ public class ScheduleController {
     }
 
     @GetMapping("/schedules/{scheduleId}")
-    public ResponseEntity<GetScheduleDetailResponse
-            >getOneSchedule(@PathVariable Long scheduleId) {
+    public ResponseEntity<GetScheduleDetailResponse>getOneSchedule(@PathVariable Long scheduleId) {
         return ResponseEntity.status(HttpStatus.OK).body(scheduleService.findOne(scheduleId));
     }
 
