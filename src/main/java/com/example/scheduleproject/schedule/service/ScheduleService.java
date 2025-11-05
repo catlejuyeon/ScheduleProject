@@ -42,7 +42,7 @@ public class ScheduleService {
 
     @Transactional(readOnly = true)
     public GetScheduleDetailResponse findOne(Long scheduleId) {
-        Schedule schedule=scheduleRepository.findById(scheduleId).orElseThrow(
+        Schedule schedule=scheduleRepository.findByIdWithComments(scheduleId).orElseThrow(
                 ()->new IllegalStateException("없는 스케줄입니다.")
         );
         List<GetCommentResponse> commentResponses = schedule.getComments().stream()
