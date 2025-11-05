@@ -1,10 +1,14 @@
 package com.example.scheduleproject.schedule.entity;
 
+import com.example.scheduleproject.comment.entity.Comment;
 import com.example.scheduleproject.common.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Getter
@@ -36,4 +40,7 @@ public class Schedule extends BaseEntity {
         this.title=title;
         this.name=name;
     }
+
+    @OneToMany(mappedBy = "schedule",cascade= CascadeType.ALL,orphanRemoval = true)
+    private List<Comment> comments = new ArrayList<>();
 }
