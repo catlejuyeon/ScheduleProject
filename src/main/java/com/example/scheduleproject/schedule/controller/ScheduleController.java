@@ -8,6 +8,7 @@ import com.example.scheduleproject.schedule.dto.res.GetScheduleDetailResponse;
 import com.example.scheduleproject.schedule.dto.res.GetScheduleResponse;
 import com.example.scheduleproject.schedule.dto.res.UpdateScheduleResponse;
 import com.example.scheduleproject.schedule.service.ScheduleService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +22,8 @@ public class ScheduleController {
     private final ScheduleService scheduleService;
 
     @PostMapping("/schedules")
-    public ResponseEntity<CreateScheduleResponse> createSchedule(@RequestBody CreateScheduleRequest request) {
+    public ResponseEntity<CreateScheduleResponse> createSchedule(
+            @Valid @RequestBody CreateScheduleRequest request) {
         return ResponseEntity.status(HttpStatus.CREATED).body(scheduleService.save(request));
     }
 
@@ -38,7 +40,7 @@ public class ScheduleController {
     @PatchMapping("/schedules/{scheduleId}")
     public ResponseEntity<UpdateScheduleResponse> updateSchedule(
             @PathVariable Long scheduleId,
-            @RequestBody UpdateScheduleRequest request
+            @Valid @RequestBody UpdateScheduleRequest request
     ) {
         return ResponseEntity.status(HttpStatus.OK).body(scheduleService.update(scheduleId,request));
     }
@@ -46,7 +48,7 @@ public class ScheduleController {
     @DeleteMapping("/schedules/{scheduleId}")
     public ResponseEntity<Void> deleteSchedule(
             @PathVariable Long scheduleId,
-            @RequestBody DeleteScheduleRequest request) {
+            @Valid @RequestBody DeleteScheduleRequest request) {
         scheduleService.delete(scheduleId, request.getPassword());
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
