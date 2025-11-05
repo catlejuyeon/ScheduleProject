@@ -1,7 +1,8 @@
 package com.example.scheduleproject.schedule.service;
 
 import com.example.scheduleproject.comment.dto.res.GetCommentResponse;
-import com.example.scheduleproject.schedule.dto.*;
+import com.example.scheduleproject.schedule.dto.req.CreateScheduleRequest;
+import com.example.scheduleproject.schedule.dto.req.UpdateScheduleRequest;
 import com.example.scheduleproject.schedule.dto.res.CreateScheduleResponse;
 import com.example.scheduleproject.schedule.dto.res.GetScheduleDetailResponse;
 import com.example.scheduleproject.schedule.dto.res.GetScheduleResponse;
